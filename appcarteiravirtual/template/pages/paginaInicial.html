@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% block title%}Página Inicial{% endblock title %}
+
+
+{% block content %}
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="">
+                {{form}}
+                <input class="form-control" type="text" placeholder="Default input">
+
+            </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="bg-primary bg d-block h-100 pt-5">
+    <div class="container d-block h-100">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <div class="card">
+                    
+                    <div class="card-body">
+                        <h2>R$ 150,00</h2>
+                        <p>Descrição do valor acima</p>
+        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>R$ 150,00</h2>
+                        <p>Descrição do valor acima</p>
+        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>R$ 150,00</h2>
+                        <p>Descrição do valor acima</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-lg-6 col-md-12">
+                <div class="card bg-card-basico">
+                    <div class="card-header">
+                        <h3 class="mb-0 text-white">
+                            Entradas
+        
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover table-dark ">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+        
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="card bg-card-basico">
+                    <div class="card-header d-flex justify-content-between">
+                        <h3 class="mb-0 text-white">
+                            Compras
+                        </h3>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                            Launch demo modal
+                        </button>
+                    </div>
+        
+                    <div class="card-body">
+                        <table class="table table-hover table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Parcelas</th>
+                                    <th scope="col">Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {% for compra in compras %}
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>{{compra.nome}}</td>
+                                    <td>{{compra.parcelas}}</td>
+                                    <td> R$ {{compra.valor}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock content %}
